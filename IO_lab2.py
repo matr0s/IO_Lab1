@@ -101,46 +101,33 @@ class IntervalMatrix:
         return result
 
 def main():
-    # Зчитування матриць з конфігураційного файлу
     try:
         with open("interval_matrices.json", 'r') as file:
             data = json.load(file)
-            
         # Створення матриць
         A = IntervalMatrix.from_list(data['matrix_a'])
         B = IntervalMatrix.from_list(data['matrix_b'])
         C = IntervalMatrix.from_list(data['matrix_c'])
-        
         # Виведення вхідних матриць
         print("\n" + "="*60)
         print("Інтервальний калькулятор матриць")
         print("="*60)
-        
         print("\nМатриця A:")
         print(A)
-        
         print("\nМатриця B:")
         print(B)
-        
         print("\nМатриця C:")
         print(C)
-        
         # Обчислення Q = B*C - A
         print("\nФормула: Q = B × C - A")
-        
         # Спочатку обчислюємо B*C
         BC = B * C
-        
         # Потім обчислюємо Q = BC - A
         Q = BC - A
-        
         print("\nРезультуюча матриця Q:")
         print(Q)
-        
         print("="*60)
-        
     except Exception as e:
         print(f"Помилка: {e}")
-
 if __name__ == "__main__":
     main()
