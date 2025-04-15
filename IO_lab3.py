@@ -168,7 +168,6 @@ def plot_function_and_derivative(f, df, a, b, approx_root):
 # ======= 4. Основна функція =======
 
 def main():
-    """Основна функція програми"""
     # Параметри задачі
     a = 1.1
     b = 1.9
@@ -195,9 +194,13 @@ def main():
     else:
         print("Функція не змінює знак на інтервалі - спробуємо знайти точку, де функція найближча до нуля.")
     print("-" * 60)
+    # Вимірюємо час виконання
+    start_time = time.time()
     # Застосовуємо інтервальний метод Ньютона
     print("Застосування інтервального методу Ньютона:")
     result_interval, iterations, history = interval_newton_root(f, df, a, b, epsilon)
+    # Час виконання
+    execution_time = time.time() - start_time
     # Виводимо результати
     print("-" * 60)
     print("Результати:")
@@ -208,8 +211,9 @@ def main():
     approx_root = (result_interval[0] + result_interval[1]) / 2
     print(f"Оцінка точки кореня: x ≈ {approx_root:.6f}")
     print(f"Значення функції в точці: f({approx_root:.6f}) = {f(approx_root):.6f}")
-    print(f"Значення першої похідної: f'({approx_root:.6f}) = {df(approx_root):.6f}")    
+    print(f"Значення першої похідної: f'({approx_root:.6f}) = {df(approx_root):.6f}")
     print(f"Кількість ітерацій: {iterations}")
+    print(f"Час виконання: {execution_time:.6f} секунд")
     # Візуалізація результатів
     try:
         plot_function_and_result(f, a, b, result_interval, history)
