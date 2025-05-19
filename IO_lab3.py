@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # ======= 1. Символьне визначення функції та автоматичне обчислення похідних =======
-
 def define_function_and_derivatives():
     """Визначення функції та її похідної за допомогою sympy"""
     # Створюємо символьну змінну x
