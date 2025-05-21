@@ -7,15 +7,12 @@ import time
 def system_function(x, a, b):
     """
     Обчислює значення функції f(x) = (x-a)/(x-0.75) + b*cos(x+0.38)
-    
     Параметри:
         x (float): Вхідне значення x
         a (float): Параметр a
         b (float): Параметр b
-        
     Повертає:
         float: Значення функції
-    
     Викидає:
         ValueError: Якщо x занадто близько до точки розриву 0.75
     """
@@ -28,13 +25,11 @@ def system_function(x, a, b):
 def generate_data(x_range, true_a, true_b, error_percentage=20):
     """
     Генерує інтервальні дані вимірювань із заданою похибкою
-    
     Параметри:
         x_range (array): Масив точок x для генерації даних
         true_a (float): Істинне значення параметра a
         true_b (float): Істинне значення параметра b
         error_percentage (float): Відсоток похибки для створення інтервалів
-        
     Повертає:
         tuple: (дійсні x, точні значення y, інтервали y)
     """
